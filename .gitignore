@@ -1,5 +1,8 @@
 # dependencies
 /node_modules
+/dist/pulse
+/dist/uber
+/dist/digibite
 
 # testing
 /coverage
