@@ -1,9 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+   // Menu
    const hamburger = document.querySelector('.hamburger'),
       menu = document.querySelector('.menu'),
       closeElem = document.querySelector('.menu__close'),
-      overlay = document.querySelector('.menu__overlay'),
-      linkStyle = document.querySelectorAll('.sidepanel__link svg path'),
+      overlay = document.querySelector('.menu__overlay');
+
+   const closeMenu = () => {
+      menu.classList.remove('active');
+   };
+
+   hamburger.addEventListener('click', () => {
+      menu.classList.add('active');
+   });
+
+   closeElem.addEventListener('click', closeMenu);
+   overlay.addEventListener('click', closeMenu);
+
+   // Interactive scroll
+   const linkStyle = document.querySelectorAll('.sidepanel__link svg path'),
       textMenu = document.querySelectorAll('.sidepanel__text span'),
       menuDivider = document.querySelectorAll('.sidepanel__divider');
 
@@ -23,18 +37,19 @@ document.addEventListener('DOMContentLoaded', () => {
       });
    };
 
-   const closeMenu = () => {
-      menu.classList.remove('active');
-   };
-
-   hamburger.addEventListener('click', () => {
-      menu.classList.add('active');
-   });
-
-   closeElem.addEventListener('click', closeMenu);
-   overlay.addEventListener('click', closeMenu);
-
    document.addEventListener('scroll', () => {
       requestAnimationFrame(handleScroll);
+   });
+
+   // Automatic calculation of percentages
+   const counters = document.querySelectorAll('.skills__ratings-counter'),
+      lines = document.querySelectorAll('.skills__ratings-line span');
+
+   counters.forEach((item, i) => {
+      let width = parseInt(item.innerHTML);
+
+      width = width < 0 ? 0 : width > 100 ? 100 : width;
+
+      lines[i].style.width = width + '%';
    });
 });
