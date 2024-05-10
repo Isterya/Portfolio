@@ -1,8 +1,8 @@
 # dependencies
 /node_modules
-/dist/pulse
-/dist/uber
-/dist/digibite
+/dist/pulse/
+/dist/uber/
+/dist/digibite/
 
 # testing
 /coverage
