@@ -473,7 +473,7 @@
             <div class="price__wrapper">
                <div class="price__item">
                   <div class="title title_fz14 price__item-title">Landing-page</div>
-                  <div class="price__item-cost">от 3000 руб.</div>
+                  <div class="price__item-cost">от 4000 руб.</div>
                   <div class="price__item-descr">Одностраничный сайт для презентации услуг/товаров/...</div>
                </div>
                <div class="price__item">
@@ -483,7 +483,7 @@
                </div>
                <div class="price__item">
                   <div class="title title_fz14 price__item-title">Информационный сайт</div>
-                  <div class="price__item-cost">от 6000 руб.</div>
+                  <div class="price__item-cost">от 7000 руб.</div>
                   <div class="price__item-descr">Сайт для Вашего блога</div>
                </div>
                <div class="price__item">
@@ -493,7 +493,7 @@
                </div>
                <div class="price__item">
                   <div class="title title_fz14 price__item-title">Корпоративный сайт</div>
-                  <div class="price__item-cost">от 8000 руб.</div>
+                  <div class="price__item-cost">от 9000 руб.</div>
                   <div class="price__item-descr">Сайт для Вашего бизнеса или компании</div>
                </div>
                <div class="price__item">
@@ -534,11 +534,11 @@
 
                   <form action="#" class="contacts__form">
                      <div class="contacts__input">
-                        <input name="name" id="name" type="text" />
+                        <input required name="name" id="name" type="text" />
                         <label for="name">Ваше имя</label>
                      </div>
                      <div class="contacts__input">
-                        <input name="email" id="email" type="email" />
+                        <input required name="email" id="email" type="email" />
                         <label for="email">Ваша почта</label>
                      </div>
 
@@ -547,8 +547,12 @@
                         <label for="text">Ваше сообщение</label>
                      </div>
 
-                     <div>
+                     <div class="contacts__triggers">
                         <button class="contacts__btn btn">Отправить сообщение</button>
+                        <div class="contacts__policy">
+                           <input required type="checkbox" />
+                           <span>Я согласен(а) с <a href="/policy.html">политикой конфиденциальности</a></span>
+                        </div>
                      </div>
                   </form>
                </div>
