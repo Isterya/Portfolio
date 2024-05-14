@@ -52,4 +52,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
       lines[i].style.width = width + '%';
    });
+
+   // Forms
+   const form = document.getElementById('contactForm');
+
+   form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch('mailer/smart.php', {
+         method: 'POST',
+         body: formData,
+      })
+         .then((response) => response.text())
+         .then((result) => {
+            console.log('Success:', result);
+            form.reset();
+         })
+         .catch((error) => {
+            console.error('Error:', error);
+         });
+   });
 });

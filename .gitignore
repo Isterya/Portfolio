@@ -1,8 +1,12 @@
 # dependencies
 /node_modules
+
+# private
 /dist/pulse/
 /dist/uber/
 /dist/digibite/
+src/mailer/smart.php
+dist/mailer/smart.php
 
 # testing
 /coverage
