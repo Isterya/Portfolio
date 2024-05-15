@@ -8,12 +8,10 @@
    align-items: center;
    height: 340px;
    z-index: 100;
-   &__link {
+   &__link svg {
+      transition: transform 0.3s ease-in-out;
       &:hover {
-         svg path {
-            transition: all 0.5s;
-            fill: #28b485;
-         }
+         transform: translateX(-5px);
       }
    }
    &__divider {

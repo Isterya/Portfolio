@@ -94,6 +94,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      a {
+         transition: transform 0.3s ease-in-out;
+         &:hover {
+            transform: translateY(-5px); /* Измените значение, чтобы поднять или опустить иконку по вашему усмотрению */
+         }
+      }
    }
    &__overlay {
       position: fixed;
