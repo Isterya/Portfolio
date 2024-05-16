@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       textMenu.forEach((el) => {
-         el.style.color = yOffset >= 300 ? 'black' : '';
+         el.style.color = yOffset >= 340 ? 'black' : '';
       });
 
       menuDivider.forEach((el) => {
