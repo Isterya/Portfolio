@@ -1,7 +1,6 @@
 @media (max-width: 1920px) {
    .promo {
       background: url('../img/main_bg.jpg') center top no-repeat;
-      background-size: 100% auto;
       height: 70vh;
    }
 }
@@ -9,6 +8,10 @@
 @media (max-width: 1439px) {
    .sidepanel {
       display: none;
+   }
+   .promo {
+      background: url('../img/main_bg.jpg') center center/cover no-repeat;
+      height: 100vh;
    }
 }
 
