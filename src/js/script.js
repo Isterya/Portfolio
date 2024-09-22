@@ -45,12 +45,30 @@ document.addEventListener('DOMContentLoaded', () => {
    const counters = document.querySelectorAll('.skills__ratings-counter'),
       lines = document.querySelectorAll('.skills__ratings-line span');
 
-   counters.forEach((item, i) => {
-      let width = parseInt(item.innerHTML);
+   const animateLines = (entries, observer) => {
+      entries.forEach((entry) => {
+         if (entry.isIntersecting) {
+            const index = Array.from(lines).indexOf(entry.target);
+            let width = parseInt(counters[index].innerHTML);
 
-      width = width < 0 ? 0 : width > 100 ? 100 : width;
+            width = width < 0 ? 0 : width > 100 ? 100 : width;
 
-      lines[i].style.width = width + '%';
+            entry.target.style.width = width + '%';
+            entry.target.style.transition = 'width 2s ease';
+
+            observer.unobserve(entry.target);
+         }
+      });
+   };
+
+   const observer = new IntersectionObserver(animateLines, {
+      threshold: 0.5,
+   });
+
+   // Отслеживаем все линии
+   lines.forEach((line) => {
+      line.style.width = '0';
+      observer.observe(line);
    });
 
    // Forms
